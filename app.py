@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from routers.api_routes import router
 from routers.api_routes import initialize_blockchain
 
-app = FastAPI(title="MRx0", version="0.0.1")
+app = FastAPI(title="MRx0", version="0.0.2")
 app.include_router(router, tags=["Blockchain"], prefix="/blockchain")
 app.add_middleware(
     CORSMiddleware,
