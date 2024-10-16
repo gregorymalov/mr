@@ -3,7 +3,7 @@ import requests
 import time
 
 # URL вашего сервера
-SERVER_URL = "http://127.0.0.1:8000/blockchain/mine"
+SERVER_URL = "https://mr.gpthero.ru/blockchain/mine"
 
 # Функция для хэширования блока
 def hash_block(index, timestamp, data, previous_hash, nonce):
@@ -79,7 +79,7 @@ def send_mined_block(index, timestamp, data, previous_hash, nonce, block_hash, m
 # Получение последнего блока (запрос к серверу)
 def get_last_block():
     try:
-        response = requests.get("http://127.0.0.1:8000/blockchain/last_block")
+        response = requests.get("https://mr.gpthero.ru/blockchain/last_block")
         if response.status_code == 200:
             return response.json()
         else:
@@ -91,9 +91,9 @@ def get_last_block():
 
 # Основная функция
 def main():
-    miner_address = "cc80f17b-0668-47b2-ad0a-69acba8f7f11"  # Укажите ваш адрес майнера
-    data = "Some data to include in the block"
-    difficulty = 2  # Укажите сложность (например, 4)
+    miner_address = "84339ee8-925b-4f58-a1b4-bc8d74b0970e"  # Укажите ваш адрес майнера
+    data = "Some terminal data to include in the block"
+    difficulty = 1  # Укажите сложность (например, 4)
 
     while True:
         last_block = get_last_block()
